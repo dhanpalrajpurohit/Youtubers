@@ -12,7 +12,15 @@ def youtubers(request):
     return render(request,'youtubers/youtubers.html',data)
 
 def search(request):
-    pass
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            tubers = tubers.objects(description__icontains=keyword)
+
+    data = {
+        'tubers':tubers
+    }
+    return render(request,'youtubers/search.html',data)
 
 def youtubers_detail(request,id):
     youtuber = get_object_or_404(Youtuber,pk=id)

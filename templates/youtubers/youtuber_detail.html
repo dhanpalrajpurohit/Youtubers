@@ -27,34 +27,12 @@
       </div>
     </section>
     <section class="video container text-center">
-      <img src="https://placeimg.com/640/480/arch" class="img-fluid" alt="team-member">
-
+      <!-- <img src="https://placeimg.com/640/480/arch" class="img-fluid" alt="team-member"> -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{youtuber.video_url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
     <section class="descritpion container">
       <h4>Descritpion</h4>
-      <p class="mt-2 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, laborum earum magni dolore
-        odit repudiandae
-        illo libero! Asperiores tempora doloremque modi id consectetur doloribus, autem possimus tenetur hic tempore
-        deserunt cupiditate ab quisquam nam a vero amet quaerat ad exercitationem perspiciatis! Fugiat nobis praesentium
-        odio at dolorum voluptatum nihil neque reiciendis optio, quae, inventore sequi quas. Hic recusandae numquam
-        dicta excepturi quaerat voluptates adipisci unde animi pariatur, voluptatibus labore provident dolorem id ipsum
-        vel dignissimos distinctio, nobis fugit libero ut itaque architecto, esse ratione. Sed, deserunt. Nulla
-        voluptatem quam facilis eaque dolorem maxime velit. Animi, quae? Quasi quia, architecto, repellendus dignissimos
-        molestias adipisci id ipsa temporibus praesentium animi odio maxime voluptate laboriosam quibusdam ex omnis
-        facere tenetur sint eaque impedit consequuntur beatae eligendi! Odit at suscipit deleniti assumenda porro esse,
-        es unde sequi natus reprehenderit pariatur. Minus eligendi pariatur officiis,
-        similique minima harum in ipsa exercitationem fugiat quia, non consectetur sed itaque distinctio soluta dolorum
-        ad reiciendis inventore vel? Sapiente voluptate accusantium nemo corrupti ex a mollitia quae adipisci, quia
-        uam minima cumque consectetur est temporibus. Non, cum totam veniam ipsum quam
-        doloremque ea nisi recusandae in beatae ad consequuntur voluptate mollitia est distinctio earum exercitationem,
-        ut tempora ducimus. A molestias delectus rem perspiciatis, hic harum asperiores qui quisquam, quibusdam,
-        deleniti reiciendis.</p>
-
-      <p>Lorem
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure laudantium in totam magnam at earum quibusdam
-        repellat perspiciatis modi explicabo! Quidem cumque veniam magnam aperiam nihil voluptatem illo velit? Nam!
-        ipsum dolor sit amet consectetur adipisicing elit. Alias tempora obcaecati ab, repellat quas, magnam
-        similique veritatis harum hic iste sed qui quos, voluptatibus veniam?</p>
+      <p class="mt-2 mb-2">{{ youtuber.description | safe }}</p>
 
 
     </section>
@@ -62,14 +40,14 @@
     <section class="container w-50">
 
       <div class="person-description mt-2">
-        <button class="btn btn-accent"> City </button>
-        <button class="btn btn-accent"> Age </button>
-        <button class="btn btn-accent"> Height </button>
+        <button class="btn btn-accent"> City:{{youtuber.city}} </button>
+        <button class="btn btn-accent"> Age:{{youtuber.age}} </button>
+        <button class="btn btn-accent"> Height :{{youtuber.height}} </button>
       </div>
       <div class="person-description mt-2">
-        <button class="btn btn-accent"> Solo </button>
-        <button class="btn btn-accent"> Canon </button>
-        <button class="btn btn-accent"> Subs </button>
+        <button class="btn btn-accent"> Solo :{{youtuber.crew}} </button>
+        <button class="btn btn-accent"> Canon :{{youtuber.camera_type}} </button>
+        <button class="btn btn-accent"> Subs :{{youtuber.subs_count}} </button>
       </div>
 
     </section>
