@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="single-page-tubers">
+    <div class="banner">
+      <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+      <h1 class="text-center">
+        Tubers
+      </h1>
+    </div>
+
+
+
+    <section class="head container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="text-center">{{youtuber.name}}</h1>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="text-accent text-center">
+            $400
+          </h1>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <img src="{{ youtuber.photo.url }}" class="img-fluid" alt="team-member">
+        </div>
+      </div>
+    </section>
+    <section class="video container text-center">
+      <img src="https://placeimg.com/640/480/arch" class="img-fluid" alt="team-member">
+
+    </section>
+    <section class="descritpion container">
+      <h4>Descritpion</h4>
+      <p class="mt-2 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, laborum earum magni dolore
+        odit repudiandae
+        illo libero! Asperiores tempora doloremque modi id consectetur doloribus, autem possimus tenetur hic tempore
+        deserunt cupiditate ab quisquam nam a vero amet quaerat ad exercitationem perspiciatis! Fugiat nobis praesentium
+        odio at dolorum voluptatum nihil neque reiciendis optio, quae, inventore sequi quas. Hic recusandae numquam
+        dicta excepturi quaerat voluptates adipisci unde animi pariatur, voluptatibus labore provident dolorem id ipsum
+        vel dignissimos distinctio, nobis fugit libero ut itaque architecto, esse ratione. Sed, deserunt. Nulla
+        voluptatem quam facilis eaque dolorem maxime velit. Animi, quae? Quasi quia, architecto, repellendus dignissimos
+        molestias adipisci id ipsa temporibus praesentium animi odio maxime voluptate laboriosam quibusdam ex omnis
+        facere tenetur sint eaque impedit consequuntur beatae eligendi! Odit at suscipit deleniti assumenda porro esse,
+        es unde sequi natus reprehenderit pariatur. Minus eligendi pariatur officiis,
+        similique minima harum in ipsa exercitationem fugiat quia, non consectetur sed itaque distinctio soluta dolorum
+        ad reiciendis inventore vel? Sapiente voluptate accusantium nemo corrupti ex a mollitia quae adipisci, quia
+        uam minima cumque consectetur est temporibus. Non, cum totam veniam ipsum quam
+        doloremque ea nisi recusandae in beatae ad consequuntur voluptate mollitia est distinctio earum exercitationem,
+        ut tempora ducimus. A molestias delectus rem perspiciatis, hic harum asperiores qui quisquam, quibusdam,
+        deleniti reiciendis.</p>
+
+      <p>Lorem
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure laudantium in totam magnam at earum quibusdam
+        repellat perspiciatis modi explicabo! Quidem cumque veniam magnam aperiam nihil voluptatem illo velit? Nam!
+        ipsum dolor sit amet consectetur adipisicing elit. Alias tempora obcaecati ab, repellat quas, magnam
+        similique veritatis harum hic iste sed qui quos, voluptatibus veniam?</p>
+
+
+    </section>
+
+    <section class="container w-50">
+
+      <div class="person-description mt-2">
+        <button class="btn btn-accent"> City </button>
+        <button class="btn btn-accent"> Age </button>
+        <button class="btn btn-accent"> Height </button>
+      </div>
+      <div class="person-description mt-2">
+        <button class="btn btn-accent"> Solo </button>
+        <button class="btn btn-accent"> Canon </button>
+        <button class="btn btn-accent"> Subs </button>
+      </div>
+
+    </section>
+
+    <section class="youtuber-form container mt-5 mb-5">
+      <div class="row">
+        <form class="col-md-8 offset-md-2">
+          <h3 class="pt-2 pb-2">Fill the Form and reach out</h3>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <input type="email" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="password" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Interested In...">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="State">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" placeholder="Phone Number">
+            </div>
+
+          </div>
+
+          <div class="form-group pt-2">
+            <textarea class="form-control" rows="3" placeholder="Details Message"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-accent">Contact Us</button>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+{% endblock %}
