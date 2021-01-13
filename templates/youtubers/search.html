@@ -11,186 +11,71 @@
     </div>
 
     <section class="searchbox container mt-5 p-3 bg-accent">
-      <form>
+      <form action="{% url 'search' %}" method="GET">
         <div class="form-row">
           <div class="form-group col-md-4">
-            <select id="inputState" class="form-control">
+            <select name="city" id="inputState" class="form-control">
               <option selected disabled hidden>City</option>
-              <option>...</option>
+              {% for city in city_search %}
+              <option value="{{ city }}">{{ city }}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="form-group col-md-4">
-            <select id="inputState" class="form-control">
+            <select name="camera_type" id="inputState" class="form-control">
               <option selected disabled hidden>Camera Type</option>
-              <option>Value 1</option>
-              <option>Value 2</option>
-              <option>Value 3</option>
-              <option>Value 4</option>
+              {% for camera in camera_type_search %}
+              <option value="{{ camera }}">{{ camera }}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="form-group col-md-4">
             <select class="form-control">
               <option selected disabled hidden>Category</option>
-              <option>...</option>
+              {% for category in category_type_search %}
+              <option value="{{ category }}">{{ category }}</option>
+              {% endfor %}
             </select>
           </div>
         </div>
+        <div class="text-center">
 
+          <button type="submit" class="btn btn-light">Search</button>
+        </div>
       </form>
-      <div class="text-center">
-
-        <button class="btn btn-light">Search</button>
-      </div>
+      
     </section>
 
 
 
     <section class="search-results container mt-3 grid">
-
-
-
+      
       <!-- person 1 -->
-      <div class="card border-0 text-center">
-        <div>
-          <img src="https://placeimg.com/640/480/people" class="card-img-top" alt="team-member">
-
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Team Member One</h5>
-          <p class="card-text">Gaming</p>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> City </button>
-            <button class="btn btn-accent"> Age </button>
-            <button class="btn btn-accent"> Height </button>
-          </div>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> Solo </button>
-            <button class="btn btn-accent"> Canon </button>
-            <button class="btn btn-accent"> Subs </button>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- person 1 -->
-      <div class="card border-0 text-center">
-        <div>
-          <img src="https://placeimg.com/640/480/people" class="card-img-top" alt="team-member">
-
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Team Member One</h5>
-          <p class="card-text">Gaming</p>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> City </button>
-            <button class="btn btn-accent"> Age </button>
-            <button class="btn btn-accent"> Height </button>
-          </div>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> Solo </button>
-            <button class="btn btn-accent"> Canon </button>
-            <button class="btn btn-accent"> Subs </button>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- person 1 -->
-      <div class="card border-0 text-center">
-        <div>
-          <img src="https://placeimg.com/640/480/people" class="card-img-top" alt="team-member">
-
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Team Member One</h5>
-          <p class="card-text">Gaming</p>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> City </button>
-            <button class="btn btn-accent"> Age </button>
-            <button class="btn btn-accent"> Height </button>
-          </div>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> Solo </button>
-            <button class="btn btn-accent"> Canon </button>
-            <button class="btn btn-accent"> Subs </button>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- person 1 -->
-      <div class="card border-0 text-center">
-        <div>
-          <img src="https://placeimg.com/640/480/people" class="card-img-top" alt="team-member">
-
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Team Member One</h5>
-          <p class="card-text">Gaming</p>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> City </button>
-            <button class="btn btn-accent"> Age </button>
-            <button class="btn btn-accent"> Height </button>
-          </div>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> Solo </button>
-            <button class="btn btn-accent"> Canon </button>
-            <button class="btn btn-accent"> Subs </button>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- person 1 -->
-      <div class="card border-0 text-center">
-        <div>
-          <img src="https://placeimg.com/640/480/people" class="card-img-top" alt="team-member">
-
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Team Member One</h5>
-          <p class="card-text">Gaming</p>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> City </button>
-            <button class="btn btn-accent"> Age </button>
-            <button class="btn btn-accent"> Height </button>
-          </div>
-          <div class="person-description mt-2">
-            <button class="btn btn-accent"> Solo </button>
-            <button class="btn btn-accent"> Canon </button>
-            <button class="btn btn-accent"> Subs </button>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      {% for  youtuber in youtubers %}
+            <!-- person 1 -->
+            <div class="card border-0 text-center">
+              <div class="feature-text">
+                  <a href="{% url 'youtuber_detail' youtuber.id %}">
+                    <img src="{{ youtuber.photo.url }}" class="card-img-top" alt="team-member">
+                </a>
+                </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ youtuber.name }}</h5>
+                <p class="card-text">{{ youtuber.category }}</p>
+                <div class="person-description mt-2">
+                  <button class="btn btn-accent"> {{ youtuber.city }} </button>
+                  <button class="btn btn-accent"> {{ youtuber.age }} </button>
+                  <button class="btn btn-accent"> {{ youtuber.height }} </button>
+                </div>
+                <div class="person-description mt-2">
+                  <button class="btn btn-accent"> {{ youtuber.crew }} </button>
+                  <button class="btn btn-accent"> {{ youtuber.camera_type }} </button>
+                  <button class="btn btn-accent"> {{ youtuber.subs_count }} </button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
     </section>
+
   </main>
 {% endblock %}
