@@ -19,7 +19,7 @@ def login(request):
             messages.success(request,"You are in loggedin.")
             return redirect("dashboard")
         else:
-            messages.error(request,"Username and Password is not correct.")
+            messages.warning(request,"Username and Password is not correct.")
             return redirect("login")
 
     return render(request, 'accounts/login.html')
@@ -35,12 +35,12 @@ def register(request):
 
         if password == confirm_password:
             if User.objects.filter(username=username).exists():
-                messages.error(request,"Username is already exits.")
+                messages.warning(request,"Username is already exits.")
                 #print("*********************Username********************")
                 return redirect('register')
             else:
                 if User.objects.filter(email=email).exists():
-                    messages.error(request,"email is already exits.")
+                    messages.warning(request,"email is already exits.")
                     #print("*******************email**********************")
                     return redirect('register')
                 else:
@@ -51,7 +51,7 @@ def register(request):
                     return redirect('home')
 
         else:
-            messages.error(request,"password does not match")
+            messages.warning(request,"password does not match")
             return redirect('register')
         
     return render(request, 'accounts/register.html')

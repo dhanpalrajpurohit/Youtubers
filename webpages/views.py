@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Slider,Team
 from youtubers.models import Youtuber
 # Create your views here.

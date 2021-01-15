@@ -9,8 +9,11 @@
       </h1>
     </div>
 
-
-
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        {% include 'messages.html' %}
+      </div>
+    </div>
     <section class="head container mt-5 mb-5">
       <div class="row">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -54,40 +57,59 @@
 
     <section class="youtuber-form container mt-5 mb-5">
       <div class="row">
-        <form class="col-md-8 offset-md-2">
+        <form method="POST" action="{% url 'hiretuber' %}" class="col-md-8 offset-md-2">
           <h3 class="pt-2 pb-2">Fill the Form and reach out</h3>
-
+          {% csrf_token %}
+          {% if user.is_authenticated %}
+              <input type="hidden" name="user_id" value="{{user.id}}">
+          {% else %}
+              <input type="hidden" name="user_id" value="00">
+          {% endif  %}
           <div class="form-row">
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" placeholder="First Name">
+              <input type="text" name="first_name" class="form-control" placeholder="First Name">
             </div>
             <div class="form-group col-md-4">
-              <input type="password" class="form-control" placeholder="Last Name">
+              <input type="text" name="last_name" class="form-control" placeholder="Last Name">
             </div>
+
+                 
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" placeholder="Email">
+              {% if user.is_authenticated %}  
+              <input type="email" name="email" value="{{user.email}}"  class="form-control" placeholder="Email">
+              {% else %}
+              <input type="email" name="email"  class="form-control" placeholder="Email">
+
+              {% endif  %}
             </div>
+            
           </div>
+          
 
           <div class="form-group">
-            <input type="password" class="form-control" placeholder="Interested In...">
+            {{youtuber.id}}
+            <input type="hidden" name="youtuber_id" value="{{youtuber.id}}">
+            <select name="tuber_name" class="form-control">
+              <option selected disabled hidden>Tuber Name</option>
+              <option value="{{ youtuber.name }}">{{ youtuber.name }}</option>
+            </select>          
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" placeholder="City">
+              <input type="text" name="city" class="form-control" placeholder="City">
             </div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" placeholder="State">
+              <input type="text" name="state" class="form-control" placeholder="State">
             </div>
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" placeholder="Phone Number">
+              <input type="number" name="phone" class="form-control" placeholder="Phone Number">
             </div>
 
           </div>
 
           <div class="form-group pt-2">
-            <textarea class="form-control" rows="3" placeholder="Details Message"></textarea>
+            <textarea class="form-control"  name="message" rows="3" placeholder="Details Message"></textarea>
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-accent">Contact Us</button>

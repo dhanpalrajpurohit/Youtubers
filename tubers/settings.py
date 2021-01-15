@@ -33,6 +33,7 @@ LOGIN_REQUIRED_URL = 'dashboard'
 # Application definition
 
 INSTALLED_APPS = [
+    'hiretuber.apps.HiretuberConfig',
     'accounts.apps.AccountsConfig',
     'youtubers.apps.YoutubersConfig',
     'webpages.apps.WebpagesConfig',
